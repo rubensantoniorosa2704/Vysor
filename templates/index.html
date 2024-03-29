@@ -7,15 +7,15 @@
 </head>
 <body>
     <h1>Upload an Image</h1>
-    <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*" onchange="previewImage(event)">
+    <form onsubmit="onSubmit(event)">
+        <input id="file_input" type="file" name="file" accept="image/*" onchange="previewImage(event)">
         <img id="image-preview" style="display: none;">
         <button type="submit">Submit</button>
     </form>
     <h2>Image Description:</h2>
-    <p>{{ description }}</p>
+    <p id="description">{{ description }}</p>
 
     <script src="../static/js/upload-image-preview.js"></script>
-
+    <script src="../static/js/upload-image-form.js"></script>
 </body>
 </html>
