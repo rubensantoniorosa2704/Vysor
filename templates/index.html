@@ -6,5 +6,16 @@
 </head>
 <body>
     <h1>Olá, Mundo!</h1>
+
+    <form id="upload-form" action="/upload-image" method="POST" enctype="multipart/form-data">
+    <input type="file" id="image-upload" name="image" accept="image/*" onchange="loadImagePreview(event)">
+    <img id="image-preview" style="display: none;">
+    <input type="submit" value="Upload">
+    </form>
+
+    <h1>Descrição da Imagem:</h1>
+    <p>{{ caption }}</p>
+
+    <script src="../static/js/script.js"></script>
 </body>
 </html>

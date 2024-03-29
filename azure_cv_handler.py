@@ -5,25 +5,26 @@ from msrest.authentication import CognitiveServicesCredentials
 import pyttsx3
 import os
 
-class Vysor:
-    def __init__(self):
-        # Configura a API de reconhecimento de imagem
-        self.subscription_key = "f25980f591a742e5b4d46639a0681234"
-        self.endpoint = "https://vysor-vresource.cognitiveservices.azure.com/"
-        self.computervision_client = ComputerVisionClient(self.endpoint, CognitiveServicesCredentials(self.subscription_key))
-        self.images_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "images")
+class az_api_handler():
+    def __init__(self, subscription_key, endpoint) -> None:
+        # Configures Azure Computer Vision API
+        self.computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-        # Configura o motor de TTS
+        # Configures TTS motor
         self.engine = pyttsx3.init()
 
-    def reconhecer_imagem(self, imagem):
-        # Chamar API
+    def recognize_image(self, imagem) -> str:
+        # Calls API
         description_result = self.computervision_client.describe_image_in_stream(imagem, language='pt')
 
-        # Obter as legendas (descrições) da resposta, com nível de confiança
+        # Obtains captions (descriptions) in API response
         if len(description_result.captions) == 0:
-            self.engine.say("Nenhuma descrição detectada.")
-            self.engine.runAndWait()
+            return "It was not possible to recognize the image"
         else:
             for caption in description_result.captions:
                 return caption.text
+
+    def say_text_out_loud(self, text) -> None:
+        self.engine.say(text)
+        self.engine.runAndWait()
+        self.engine.stop()
