@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload an image</title>
+    <title>Image Description</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
 </head>
 <body>
-    <h1>Upload an Image</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*">
-        <button type="submit">Submit</button>
-    </form>
+    <h1>Image Description</h1>
+    <p>{{ description }}</p>
 </body>
 </html>

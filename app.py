@@ -15,14 +15,14 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/upload-image', methods=['POST'])
-def upload_image():
-    image = request.files['image']
+@app.route('/upload', methods=['POST'])
+def upload():
+    image = request.files['file']
 
     # Creates the azure_cv_handler object
     az = azure_cv_handler.az_api_handler(subscription_key=os.getenv('API_KEY'), endpoint=os.getenv('API_ENDPOINT'))
-    response = az.recognize_image(image)
-    return render_template('index.html', caption=response)
+    description = az.recognize_image(image)
+    return render_template('result.html', description=description)
 
 
 if __name__ == '__main__':
