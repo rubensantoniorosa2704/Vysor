@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a723d946-555c-4aea-8418-ccc3fc512366" name="Changes" comment="first prototype (not working)">
-      <change afterPath="$PROJECT_DIR$/templates/result.html" afterDir="false" />
+    <list default="true" id="a723d946-555c-4aea-8418-ccc3fc512366" name="Changes" comment="first prototype (working)">
+      <change afterPath="$PROJECT_DIR$/static/js/upload-image-preview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +128,7 @@
       <updated>1711667484851</updated>
       <workItem from="1711667509751" duration="153000" />
       <workItem from="1711667678393" duration="8251000" />
-      <workItem from="1711721305995" duration="2841000" />
+      <workItem from="1711721305995" duration="6054000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -161,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711722888817</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="first prototype (working)">
+      <option name="closed" value="true" />
+      <created>1711738116859</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711738116859</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,9 +195,10 @@
     <MESSAGE value="First page" />
     <MESSAGE value="Added azure_cv_handler.py and README" />
     <MESSAGE value="first prototype (not working)" />
-    <option name="LAST_COMMIT_MESSAGE" value="first prototype (not working)" />
+    <MESSAGE value="first prototype (working)" />
+    <option name="LAST_COMMIT_MESSAGE" value="first prototype (working)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Vysor$Vysor.coverage" NAME="Vysor Coverage Results" MODIFIED="1711737809893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Vysor$Vysor.coverage" NAME="Vysor Coverage Results" MODIFIED="1711741092089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
