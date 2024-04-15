@@ -1,9 +1,8 @@
 import os
-
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
-
 import azure_cv_handler
+
 
 app = Flask(__name__)
 load_dotenv()
@@ -11,17 +10,30 @@ load_dotenv()
 
 @app.route('/', methods=['GET'])
 def index():
+    """
+    Render the index.html template with an initial description.
+
+    Returns:
+        str: Rendered HTML template with the initial description.
+    """
     description = 'Upload an image to continue'
     return render_template('index.html', description=description)
 
 
 @app.route('/generate_image', methods=['POST'])
 def generate_image():
+    """
+    Handle POST request to generate image description.
+
+    Returns:
+        str: Image description obtained from Azure Computer Vision API.
+    """
     # Picks the image from the form
     file = request.files['image']
 
-    # Creates the azure_cv_handler object
-    az = azure_cv_handler.az_api_handler(subscription_key=os.getenv('API_KEY'), endpoint=os.getenv('API_ENDPOINT'))
+    # Creates the AzureAPIHandler object
+    az = azure_cv_handler.AzureAPIHandler(subscription_key=os.getenv('API_KEY'),
+                                          endpoint=os.getenv('API_ENDPOINT'))
     description = az.recognize_image(file)
 
     return description

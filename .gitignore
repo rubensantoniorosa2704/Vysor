@@ -1,0 +1,43 @@
+# Ignora arquivos de configuração do editor
+.vscode/
+.idea/
+
+# Ignora arquivos de log
+*.log
+
+# Ignora arquivos de cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Ignora arquivos de ambiente virtual
+env/
+venv/
+ENV/
+
+# Ignora arquivos de banco de dados
+*.db
+*.sqlite
+
+# Ignora arquivos de teste
+tests/
+*.test
+*.pytest_cache/
+
+# Ignora arquivos de CI/CD
+.gitlab-ci.yml
+.travis.yml
+.github/
+
+# Ignora arquivos de controle de versão
+.git/
+.gitignore
+
+# Ignora arquivos específicos do Flask
+instance/
+.flaskenv
+
+# Ignora os arquivos de ambiente
+*.env

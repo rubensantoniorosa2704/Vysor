@@ -9,9 +9,7 @@ isodate==0.6.1
 msrest==0.7.1
 oauthlib==3.2.2
 pillow==10.2.0
-pypiwin32==223
 pyttsx3==2.90
-pywin32==306
 requests==2.31.0
 requests-oauthlib==2.0.0
 six==1.16.0

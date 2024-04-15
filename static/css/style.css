@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#img-preview-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+#image-preview {
+    display: none;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.columns {
+    margin: 3px;
+}
+
+#response-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

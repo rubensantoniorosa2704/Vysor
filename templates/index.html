@@ -2,20 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Upload Image</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <h1>Upload an Image</h1>
-    <form onsubmit="onSubmit(event)">
-        <input id="file_input" type="file" name="file" accept="image/*" onchange="previewImage(event)">
-        <img id="image-preview" style="display: none;">
-        <button type="submit">Submit</button>
-    </form>
-    <h2>Image Description:</h2>
-    <p id="description">{{ description }}</p>
+    <!--Navigation-->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="../static/img/vysor-logo.png" alt="vysor logo" style="width: 100px">
+        </a>
+      </div>
+    </nav>
 
+    <!--Image preview-->
+    <div class="columns is-centered">
+        <div class="column is-three-quarters is-justify-content-center" style="background-color: darkslategray">
+            <!-- Image Submission Form -->
+            <form onsubmit="onSubmit(event)">
+
+                <!-- Image Preview -->
+                <div id="img-preview-div" class="is-justify-content-center">
+                    <img src="" id="image-preview" alt="image-preview">
+                </div>
+
+                <!-- Submit and upload -->
+                <div class="field has-addons is-justify-content-center">
+                    <div class="field">
+                        <input id="file_input" required="required" type="file" name="file" accept="image/*" onchange="previewImage(event)" class="input">
+                    </div>
+
+                    <div class="control">
+                      <button class="button is-primary" type="submit" onclick="onSubmit()">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--<progress class="progress is-small is-primary" max="100">15%</progress>-->
+
+    <!-- Response part -->
+    <div class="columns is-vcentered" id="response-section" style="display: none; position: fixed;">
+        <article class="message is-success is-justify-content-center">
+            <div class="message-header">
+                <p>Image Description</p>
+                <button class="delete" aria-label="delete" onclick="closeMessage()"></button>
+            </div>
+            <div class="message-body">
+                <p id="description">{{ description }}</p>
+            </div>
+        </article>
+    </div>
+
+    <!-- Submit form scripts (don´t touch these!) -->
     <script src="../static/js/upload-image-preview.js"></script>
     <script src="../static/js/upload-image-form.js"></script>
+    <script src="../static/js/response_notification.js"></script>
 </body>
 </html>
