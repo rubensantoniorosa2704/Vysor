@@ -8,11 +8,13 @@ Vysor is an web-based application that allows users to upload images and receive
 - [Docker](https://www.docker.com/)
 
 ## How to use it
-- Make sure to have [docker](https://www.docker.com/) installed
-- Execute ```docker push rubensantoniorosa2704/vysor:latest```
-- Have fun :)
+- First of all, you need create an Azure account and configure an Azure Computer Vision Resource (don't worry, it's easy to set up and free up to 20 Calls per minute, 5K Calls per month). You can read the API documentation [here](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/);
+- Make sure to have [docker](https://www.docker.com/) installed;
+- Execute ```docker push rubensantoniorosa2704/vysor:latest```;
+- Insert your computer vision keys into Docker as the image below:
+![alt text](image.png)
+- Execute the container and have fun :)
 
 ## How to contribute
 - Clone the repository in your machine, and create a new branch for your new functionality/improvement.
-- Fill your Azure Cognitive Vision API key and endpoint in the [.env file](/.env)
 - Send me a pull request with a description of what you modified

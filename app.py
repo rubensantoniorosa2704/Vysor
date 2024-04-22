@@ -1,12 +1,8 @@
 import os
 from flask import Flask, render_template, request
-from dotenv import load_dotenv
 import azure_cv_handler
 
-
 app = Flask(__name__)
-load_dotenv()
-
 
 @app.route('/', methods=['GET'])
 def index():
