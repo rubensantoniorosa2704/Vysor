@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function closeModal($el) {
+      // This will prevent the last response to be shown if another image is sent
+      document.querySelector('#description').innerText = "Processing..." 
+
       $el.classList.remove('is-active');
     }
   

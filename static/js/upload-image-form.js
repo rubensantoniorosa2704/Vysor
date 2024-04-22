@@ -13,5 +13,7 @@ const onSubmit = async (event) => {
         body:formData
     });
 
-    document.querySelector('#description').innerText = await result.text();
+    // Returns the result to html, replacing the first letter with uppercase
+    let resultText = await result.text();
+    document.querySelector('#description').innerText = resultText.charAt(0).toUpperCase() + resultText.slice(1);
 }
