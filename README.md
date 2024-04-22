@@ -12,7 +12,8 @@ Vysor is an web-based application that allows users to upload images and receive
 - Make sure to have [docker](https://www.docker.com/) installed;
 - Execute ```docker push rubensantoniorosa2704/vysor:latest```;
 - Insert your computer vision keys into Docker as the image below:
-![alt text](image.png)
+![image](https://github.com/rubensantoniorosa2704/Vysor/assets/86082354/1d6cd7ed-38bc-4a83-aab4-2e7addc84a2f)
+
 - Execute the container and have fun :)
 
 ## How to contribute
