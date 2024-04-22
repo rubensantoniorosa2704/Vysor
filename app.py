@@ -2,7 +2,9 @@ import os
 from flask import Flask, render_template, request
 import azure_cv_handler
 
+
 app = Flask(__name__)
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -28,8 +30,10 @@ def generate_image():
     file = request.files['image']
 
     # Creates the AzureAPIHandler object
-    az = azure_cv_handler.AzureAPIHandler(subscription_key=os.getenv('API_KEY'),
-                                          endpoint=os.getenv('API_ENDPOINT'))
+    az = azure_cv_handler.AzureAPIHandler(
+        subscription_key=os.getenv('API_KEY'),
+        endpoint=os.getenv('API_ENDPOINT')
+    )
     description = az.recognize_image(file)
 
     return description
