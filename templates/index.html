@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="control">
-                      <button class="button is-primary" type="submit" onclick="onSubmit()">Submit</button>
+                      <button class="button is-primary js-modal-trigger" data-target="modal-js-example" type="submit" onclick="onSubmit()">Submit</button>
                     </div>
                 </div>
             </form>
@@ -44,8 +44,8 @@
 
     <!--<progress class="progress is-small is-primary" max="100">15%</progress>-->
 
-    <!-- Response part -->
-    <div class="columns is-vcentered" id="response-section" style="display: none; position: fixed;">
+    <!-- Response part 
+    <article class="columns is-vcentered" id="response-section" style="display: none; position: fixed;">
         <article class="message is-success is-justify-content-center">
             <div class="message-header">
                 <p>Image Description</p>
@@ -55,11 +55,28 @@
                 <p id="description">{{ description }}</p>
             </div>
         </article>
+    </article>
+    -->
+
+    <!--New Response Part-->
+    <div id="modal-js-example" class="modal">
+        <div class="modal-background"></div>
+    
+        <div class="modal-content" id="response-section">
+            <div class="box">
+                <h1 class="title">Image Description</h1>
+                <p id="description" class="subtitle">{{ description }}</p>
+            </div>
+        </div>
+    
+        <button class="modal-close is-large" aria-label="close"></button>
     </div>
 
-    <!-- Submit form scripts (don´t touch these!) -->
+
+    <!-- Submit form and response scripts (don´t touch these!) -->
     <script src="../static/js/upload-image-preview.js"></script>
     <script src="../static/js/upload-image-form.js"></script>
     <script src="../static/js/response_notification.js"></script>
+    <script src="../static/js/modal_behaviour.js"></script>
 </body>
 </html>

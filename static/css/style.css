@@ -21,9 +21,6 @@
     margin: 3px;
 }
 
-#response-section {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#description {
+    padding-top: 10px;
 }

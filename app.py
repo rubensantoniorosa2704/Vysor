@@ -16,7 +16,7 @@ def index():
     Returns:
         str: Rendered HTML template with the initial description.
     """
-    description = 'Upload an image to continue'
+    description = 'Processing...'
     return render_template('index.html', description=description)
 
 
@@ -40,4 +40,7 @@ def generate_image():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
+    # Uncomment to run in debug mode and to allow connection from any device
+    # WARNING, ONLY USE IN TESTING ENVIRONMENTS
+    # app.run(debug=True, host='0.0.0.0', port=5000)
