@@ -6,6 +6,7 @@
     <title>Upload Image</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://kit.fontawesome.com/0ada53ee46.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!--Navigation-->
@@ -42,20 +43,26 @@
         </div>
     </div>
 
-    <!--New Response Part-->
+    <!-- New Response Part -->
     <div id="modal-js-example" class="modal">
         <div class="modal-background"></div>
-    
+
         <div class="modal-content" id="response-section">
             <div class="box">
                 <h1 class="title">Image Description</h1>
                 <p id="description" class="subtitle">{{ description }}</p>
             </div>
+
+            <button class="button is-medium is-rounded" id="tts-button" onclick="playTextToSpeech()">
+                <p>Text-to-speech</p>
+                <span class="icon">
+                    <i class="fas fa-volume-up"></i>
+                </span>
+            </button>
         </div>
-    
+        <!-- Close button -->
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
-
 
     <!-- Submit form and response scripts (don´t touch these!) -->
     <script src="../static/js/upload-image-preview.js"></script>
