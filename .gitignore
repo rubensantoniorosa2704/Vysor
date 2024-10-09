@@ -39,5 +39,5 @@ tests/
 instance/
 .flaskenv
 
-# Ignora os arquivos de ambiente
-*.env
+# Ignora arquivos de ambiente
+.env
