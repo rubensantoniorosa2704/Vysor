@@ -1,20 +1,20 @@
 # Vysor
-Vysor is an web-based application that allows users to upload images and receive detailed descriptions of them. This project is particularly useful for visually impaired individuals, digital marketers, and anyone in need of quick and reliable image descriptions.
+Vysor é um aplicativo baseado na web que permite aos usuários fazer upload de imagens e receber descrições detalhadas delas. Este projeto é particularmente útil para pessoas com deficiência visual, profissionais de marketing digital e qualquer pessoa que precise de descrições de imagens rápidas e confiáveis.
 
-## Technologies used
-- [Microsoft Azure Computer Vision API](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/)
-- [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+## Tecnologias utilizadas
+- [Microsoft Azure Computer Vision API](https://learn.microsoft.com/pt-br/azure/ai-services/computer-vision/)
+- [Flask](https://flask.palletsprojects.com/pt_BR/3.0.x/)
 - [Bulma](https://bulma.io/)
 - [Docker](https://www.docker.com/)
 
-## How to use it
-- First of all, you need create an Azure account and configure an Azure Computer Vision Resource (don't worry, it's easy to set up and free up to 20 Calls per minute, 5K Calls per month). You can read the API documentation [here](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/);
-- Make sure to have [docker](https://www.docker.com/) installed;
-- Insert you api key and enpoint into the ``.env`` file
-- Execute ```make run``` to build the container and run it on 5000:5000 port;
+## Como usar
+- Primeiro, você precisa criar uma conta na Azure e configurar um recurso do Azure Computer Vision (não se preocupe, é fácil de configurar e gratuito até 20 chamadas por minuto, 5 mil chamadas por mês). Você pode ler a documentação da API [aqui](https://learn.microsoft.com/pt-br/azure/ai-services/computer-vision/);
+- Certifique-se de ter o [Docker](https://www.docker.com/) instalado;
+- Insira sua chave de API e endpoint no arquivo ``.env``;
+- Execute ```make run``` para construir o container e executá-lo na porta 5000:5000;
 
-- Have fun :)
+- Divirta-se :)
 
-## How to contribute
-- Clone the repository in your machine, and create a new branch for your new functionality/improvement.
-- Send me a pull request with a description of what you modified
+## Como contribuir
+- Clone o repositório na sua máquina e crie uma nova branch para sua nova funcionalidade/melhoria.
+- Envie um pull request com uma descrição do que você modificou.

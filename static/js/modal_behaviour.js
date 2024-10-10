@@ -1,45 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Functions to open and close a modal
-    function openModal($el) {
+  // Funções para abrir e fechar um modal
+  function abrirModal($el) {
       $el.classList.add('is-active');
-    }
-  
-    function closeModal($el) {
-      // This will prevent the last response to be shown if another image is sent
-      document.querySelector('#description').innerText = "Processing..." 
+  }
+
+  function fecharModal($el) {
+      // Isso impedirá que a última resposta seja mostrada se outra imagem for enviada
+      document.querySelector('#description').innerText = "Processando...";
 
       $el.classList.remove('is-active');
-    }
-  
-    function closeAllModals() {
+  }
+
+  function fecharTodosOsModais() {
       (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-        closeModal($modal);
+          fecharModal($modal);
       });
-    }
-  
-    // Add a click event on buttons to open a specific modal
-    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+  }
+
+  // Adiciona um evento de clique nos botões para abrir um modal específico
+  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
       const modal = $trigger.dataset.target;
       const $target = document.getElementById(modal);
-  
+
       $trigger.addEventListener('click', () => {
-        openModal($target);
+          abrirModal($target);
       });
-    });
-  
-    // Add a click event on various child elements to close the parent modal
-    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-      const $target = $close.closest('.modal');
-  
-      $close.addEventListener('click', () => {
-        closeModal($target);
-      });
-    });
-  
-    // Add a keyboard event to close all modals
-    document.addEventListener('keydown', (event) => {
-      if(event.key === "Escape") {
-        closeAllModals();
-      }
-    });
   });
+
+  // Adiciona um evento de clique em vários elementos filhos para fechar o modal pai
+  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+      const $target = $close.closest('.modal');
+
+      $close.addEventListener('click', () => {
+          fecharModal($target);
+      });
+  });
+
+  // Adiciona um evento de teclado para fechar todos os modais
+  document.addEventListener('keydown', (event) => {
+      if (event.key === "Escape") {
+          fecharTodosOsModais();
+      }
+  });
+});

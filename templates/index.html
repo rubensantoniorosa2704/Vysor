@@ -3,68 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Upload Image</title>
+    <title>Enviar Imagem</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
     <script src="https://kit.fontawesome.com/0ada53ee46.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!--Navigation-->
+    <!-- Navegação -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item">
-            <img src="../static/img/vysor-logo.png" alt="vysor logo" style="width: 100px">
+            <img src="../static/img/vysor-logo.png" alt="logotipo vysor" style="width: 100px">
         </a>
       </div>
     </nav>
 
-    <!--Image preview-->
+    <!-- Pré-visualização da Imagem -->
     <div class="columns is-centered">
         <div class="column is-three-quarters is-justify-content-center" style="background-color: darkslategray">
-            <!-- Image Submission Form -->
+            <!-- Formulário de Envio de Imagem -->
             <form onsubmit="onSubmit(event)">
 
-                <!-- Image Preview -->
+                <!-- Pré-visualização da Imagem -->
                 <div id="img-preview-div" class="is-justify-content-center">
-                    <img src="" id="image-preview" alt="image-preview">
+                    <img src="" id="image-preview" alt="pré-visualização da imagem">
                 </div>
 
-                <!-- Submit and upload -->
+                <!-- Enviar e fazer upload -->
                 <div class="field has-addons is-justify-content-center">
                     <div class="field">
                         <input id="file_input" required="required" type="file" name="file" accept="image/*" onchange="previewImage(event)" class="input">
                     </div>
 
                     <div class="control">
-                      <button class="button is-primary js-modal-trigger" data-target="modal-js-example" type="submit" onclick="onSubmit()">Submit</button>
+                      <button class="button is-primary js-modal-trigger" data-target="modal-js-example" type="submit" onclick="onSubmit()">Enviar</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- New Response Part -->
+    <!-- Nova Parte de Resposta -->
     <div id="modal-js-example" class="modal">
         <div class="modal-background"></div>
 
         <div class="modal-content" id="response-section">
             <div class="box">
-                <h1 class="title">Image Description</h1>
+                <h1 class="title">Descrição da Imagem</h1>
                 <p id="description" class="subtitle">{{ description }}</p>
             </div>
 
             <button class="button is-medium is-rounded" id="tts-button" onclick="playTextToSpeech()">
-                <p>Text-to-speech</p>
+                <p>Texto-para-fala</p>
                 <span class="icon">
                     <i class="fas fa-volume-up"></i>
                 </span>
             </button>
         </div>
-        <!-- Close button -->
+        <!-- Botão de Fechar -->
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
 
-    <!-- Submit form and response scripts (don´t touch these!) -->
+    <!-- Scripts de envio de formulário e resposta (não toque neles!) -->
     <script src="../static/js/upload-image-preview.js"></script>
     <script src="../static/js/upload-image-form.js"></script>
     <script src="../static/js/response_notification.js"></script>
