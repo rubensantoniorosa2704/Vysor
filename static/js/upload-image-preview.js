@@ -1,30 +1,28 @@
-// Function to preview the selected image
-const previewImage = (event) => {
-    const reader = new FileReader();
-    reader.onload = () => {
+// Função para visualizar a imagem selecionada
+const visualizarImagem = (event) => {
+    const leitor = new FileReader();
+    leitor.onload = () => {
         const output = document.getElementById('image-preview');
-        output.src = reader.result;
+        output.src = leitor.result;
         output.style.display = 'block';
-        sessionStorage.setItem('uploaded-image', reader.result);
+        sessionStorage.setItem('uploaded-image', leitor.result);
     };
-    // Read the data URL of the selected file
-    reader.readAsDataURL(event.target.files[0]);
+    // Lê a URL de dados do arquivo selecionado
+    leitor.readAsDataURL(event.target.files[0]);
 }
 
-
-// When the page is loaded, check if there is an image in the sessionStorage
+// Quando a página é carregada, verifica se há uma imagem no sessionStorage
 window.onload = () => {
-    const uploadedImage = sessionStorage.getItem('uploaded-image');
-    if (uploadedImage) {
+    const imagemCarregada = sessionStorage.getItem('uploaded-image');
+    if (imagemCarregada) {
         const output = document.getElementById('image-preview');
-        output.src = uploadedImage;
+        output.src = imagemCarregada;
         output.style.display = 'block';
     }
 }
 
-
-// Clears sessionStorage when the page is reloaded
+// Limpa o sessionStorage quando a página é recarregada
 window.addEventListener('beforeunload', () => {
-    // Clear session storage
+    // Limpa o armazenamento de sessão
     sessionStorage.clear();
 });

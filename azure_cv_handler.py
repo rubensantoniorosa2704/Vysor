@@ -5,43 +5,42 @@ from msrest.authentication import CognitiveServicesCredentials
 
 class AzureAPIHandler:
     """
-    A class to handle Azure Computer Vision API requests.
+    Uma classe para lidar com requisições à API Azure Computer Vision.
 
-    Attributes:
-        computervision_client (ComputerVisionClient): The client for Azure
-        Computer Vision API.
+    Atributos:
+        computervision_client (ComputerVisionClient): O cliente para a API Azure
+        Computer Vision.
     """
 
     def __init__(self, subscription_key, endpoint):
         """
-        Initializes the AzureAPIHandler with the provided subscription key
-        and endpoint.
+        Inicializa o AzureAPIHandler com a chave de assinatura e o endpoint fornecidos.
 
         Args:
-            subscription_key (str): The subscription key for Azure Computer
-            Vision API.
-            endpoint (str): The endpoint for Azure Computer Vision API.
+            subscription_key (str): A chave de assinatura para a API Azure Computer
+            Vision.
+            endpoint (str): O endpoint para a API Azure Computer Vision.
         """
         self.computervision_client = ComputerVisionClient(
             endpoint, CognitiveServicesCredentials(subscription_key))
 
     def recognize_image(self, image_stream):
         """
-        Recognizes and describes an image using Azure Computer Vision API.
+        Reconhece e descreve uma imagem usando a API Azure Computer Vision.
 
         Args:
-            image_stream (stream): The image stream to be processed.
+            image_stream (stream): O fluxo da imagem a ser processada.
 
         Returns:
-            str: The description of the recognized image.
+            str: A descrição da imagem reconhecida.
         """
-        # Calls API
+        # Chama a API
         description_result = \
             self.computervision_client.describe_image_in_stream(image_stream, language='pt')
 
-        # Obtains captions (descriptions) in API response
+        # Obtém as legendas (descrições) na resposta da API
         if len(description_result.captions) == 0:
-            return "It was not possible to recognize the image"
+            return "Não foi possível reconhecer a imagem"
         else:
             for caption in description_result.captions:
                 return caption.text

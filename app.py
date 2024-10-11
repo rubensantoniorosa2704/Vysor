@@ -9,38 +9,38 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def index():
     """
-    Render the index.html template with an initial description.
+    Renderiza o template index.html com uma descrição inicial.
 
-    Returns:
-        str: Rendered HTML template with the initial description.
+    Retorna:
+        str: Template HTML renderizado com a descrição inicial.
     """
-    description = 'Processing...'
-    return render_template('index.html', description=description)
+    descricao = 'Processando...'
+    return render_template('index.html', descricao=descricao)
 
 
 @app.route('/generate_image', methods=['POST'])
 def generate_image():
     """
-    Handle POST request to generate image description.
+    Lida com a requisição POST para gerar a descrição da imagem.
 
-    Returns:
-        str: Image description obtained from Azure Computer Vision API.
+    Retorna:
+        str: Descrição da imagem obtida da API Azure Computer Vision.
     """
-    # Picks the image from the form
-    file = request.files['image']
+    # Pega a imagem do formulário
+    arquivo = request.files['image']
 
-    # Creates the AzureAPIHandler object
+    # Cria o objeto AzureAPIHandler
     az = azure_cv_handler.AzureAPIHandler(
         subscription_key=os.getenv('API_KEY'),
         endpoint=os.getenv('API_ENDPOINT')
     )
-    description = az.recognize_image(file)
+    descricao = az.recognize_image(arquivo)
 
-    return description
+    return descricao
 
 
 if __name__ == '__main__':
     app.run()
-    # Uncomment to run in debug mode and to allow connection from any device
-    # WARNING, ONLY USE IN TESTING ENVIRONMENTS
+    # Descomente para executar em modo de depuração e permitir conexão de qualquer dispositivo
+    # ATENÇÃO, USE APENAS EM AMBIENTES DE TESTE
     # app.run(debug=True, host='0.0.0.0', port=5000)

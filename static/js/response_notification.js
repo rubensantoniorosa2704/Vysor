@@ -1,14 +1,14 @@
-// Define an arrow function for the TTS action
-const playTextToSpeech = () => {
-    const description = document.querySelector('#description').innerText;
+// Define uma função de seta para a ação de TTS (Texto para Fala)
+const reproduzirTextoParaFala = () => {
+    const descricao = document.querySelector('#description').innerText;
 
-    // Create a new instance of SpeechSynthesisUtterance
-    const msg = new SpeechSynthesisUtterance(description);
+    // Cria uma nova instância de SpeechSynthesisUtterance
+    const msg = new SpeechSynthesisUtterance(descricao);
 
-    // Set additional properties (if needed)
-    msg.lang = 'pt-BR'; // Set the language (e.g., 'en-US' for United States English)
-    msg.rate = 1.0; // Set the speech rate (1.0 is the default)
+    // Define propriedades adicionais (se necessário)
+    msg.lang = 'pt-BR'; // Define o idioma (por exemplo, 'en-US' para inglês dos Estados Unidos)
+    msg.rate = 1.0; // Define a taxa de fala (1.0 é o padrão)
 
-    // Start speech synthesis
+    // Inicia a síntese de fala
     window.speechSynthesis.speak(msg);
 };
