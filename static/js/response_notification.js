@@ -6,7 +6,7 @@ const playTextToSpeech = () => {
     const msg = new SpeechSynthesisUtterance(description);
 
     // Set additional properties (if needed)
-    msg.lang = 'en-US'; // Set the language (e.g., 'en-US' for United States English)
+    msg.lang = 'pt-BR'; // Set the language (e.g., 'en-US' for United States English)
     msg.rate = 1.0; // Set the speech rate (1.0 is the default)
 
     // Start speech synthesis

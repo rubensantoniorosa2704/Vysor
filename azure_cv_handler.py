@@ -37,7 +37,7 @@ class AzureAPIHandler:
         """
         # Calls API
         description_result = \
-            self.computervision_client.describe_image_in_stream(image_stream)
+            self.computervision_client.describe_image_in_stream(image_stream, language='pt')
 
         # Obtains captions (descriptions) in API response
         if len(description_result.captions) == 0:
